@@ -1,6 +1,7 @@
 package a1;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -47,10 +48,13 @@ public class TestSootCallGraph extends SceneTransformer {
 
 	    //enable call graph
 	    //enableCHACallGraph();		//for CHA output
-	    //enableSparkCallGraph();	//for PTA output
+	    enableSparkCallGraph();	//for PTA output
 
             //start working
+	    Timestamp s = new Timestamp(System.currentTimeMillis());
+	    System.out.println("Start time: " + s);
 	    PackManager.v().runPacks();
+	    
 	}
 	private static void excludeJDKLibrary()
 	{
@@ -99,7 +103,7 @@ public class TestSootCallGraph extends SceneTransformer {
 	@Override
 	protected void internalTransform(String phaseName,
 			Map options) {
-
+		
 		int numOfEdges =0;
 
 		CallGraph callGraph = Scene.v().getCallGraph();
@@ -120,6 +124,7 @@ public class TestSootCallGraph extends SceneTransformer {
 		}
 
 		 System.err.println("Total Edges:" + numOfEdges);
-
+		 Timestamp s = new Timestamp(System.currentTimeMillis());
+		 System.out.println("End time: " + s);
 	}
 }
