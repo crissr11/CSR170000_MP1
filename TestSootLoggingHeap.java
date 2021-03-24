@@ -71,7 +71,9 @@ public class TestSootLoggingHeap extends BodyTransformer {
 		    	if (stmt.containsFieldRef()) {
 		    		
 		    		// I have no idea what I am doing
-		    		Log.logFieldAcc(stmt, phaseName, stmt.getDefBoxes() == null?true: false, stmt.getDefBoxes() == null?true: false);
+		    		String name = stmt.getFieldRef().getField().getName();
+		    		
+		    		Log.logFieldAcc(stmt, name, stmt.getFieldRef().getField().isStatic(), stmt.getFieldRef().getUseBoxes().isEmpty());
 		    		
 		    	}
 		    }
