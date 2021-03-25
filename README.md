@@ -7,3 +7,25 @@ After running TestSootCallGraph and getting an output, I was able to learn that 
 
 # Part 3 code includes: TestSootLogging.java, Log.java, and HelloThread.java
 The code needed to complete internalTransform() was completed and I got an output similar to the document.
+Output from program:
+
+Thread Thread-13 wrote static field x
+Thread Thread-14 wrote static field x
+Thread Thread-14 read instance field y of object $i0 = r0.<a1.HelloThread$TestThread: int y>
+Thread Thread-14 read instance field y of object r0.<a1.HelloThread$TestThread: int y> = $i1
+Thread Thread-13 read instance field y of object $i3 = $r2.<a1.HelloThread$TestThread: int y>
+Thread Thread-13 wrote static field x
+Thread Thread-13 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
+Thread Thread-15 wrote static field out
